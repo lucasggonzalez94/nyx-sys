@@ -1,19 +1,15 @@
 @import '../../../variables.scss';
 
 .footer {
-  position: fixed;
   background: #000;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 10px;
-  margin-bottom: 10px;
-  left: 10px;
-  right: 10px;
+  margin: 10px;
   border-radius: 5px;
   padding: 15px;
-  box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.8);
   bottom: 0;
 
   .copy {

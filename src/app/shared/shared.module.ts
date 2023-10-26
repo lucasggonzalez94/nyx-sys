@@ -6,6 +6,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import { InputSearchComponent } from './components/input-search/input-search.component';
+import { ProductsGridComponent } from '../products/components/products-grid/products-grid.component';
+import { ProductCardComponent } from '../products/components/product-card/product-card.component';
 
 
 
@@ -14,7 +16,9 @@ import { InputSearchComponent } from './components/input-search/input-search.com
     NavbarComponent,
     FooterComponent,
     HomePageComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    ProductsGridComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,8 @@ import { InputSearchComponent } from './components/input-search/input-search.com
   ],
   exports: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ProductCardComponent
   ]
 })
 export class SharedModule { }
