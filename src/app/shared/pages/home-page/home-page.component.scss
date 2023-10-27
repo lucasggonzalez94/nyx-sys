@@ -14,6 +14,7 @@
     right: 5%;
     filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 1));
     animation: floatAnimation 3s infinite;
+    cursor: pointer;
   }
 
   @keyframes floatAnimation {

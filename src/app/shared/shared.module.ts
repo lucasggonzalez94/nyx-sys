@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { InputSearchComponent } from './components/input-search/input-search.component';
 import { ProductsGridComponent } from '../products/components/products-grid/products-grid.component';
 import { ProductCardComponent } from '../products/components/product-card/product-card.component';
+import { CarouselTitleComponent } from './components/carousel-title/carousel-title.component';
 
 
 
@@ -18,7 +19,8 @@ import { ProductCardComponent } from '../products/components/product-card/produc
     HomePageComponent,
     InputSearchComponent,
     ProductsGridComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CarouselTitleComponent
   ],
   imports: [
     CommonModule,
