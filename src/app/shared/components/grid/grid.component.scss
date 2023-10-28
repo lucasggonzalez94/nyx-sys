@@ -1,0 +1,14 @@
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .grid-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas con ancho igual */
+    grid-gap: 20px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+  }
+}

@@ -1,0 +1,6 @@
+<div [class]="title ? 'grid-container mt-5' : 'grid-container mt-3'">
+  <h3 class="mb-4" *ngIf="title">{{ title }}</h3>
+  <div class="grid-content mb-4">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import '../../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 .carousel-container {
   width: 100%;
   overflow: hidden;
-  border-top: .2rem solid $yellow;
-  border-bottom: .2rem solid $yellow;
+  border-top: .2rem solid $nyx-blue-light;
+  border-bottom: .2rem solid $nyx-blue-light;
   margin: 2rem 0 1.5rem 0;
+  opacity: .8;
 }
 
 .carousel-content {
   white-space: nowrap;
   font-size: 30px;
-  font-weight: 900;
-  color: $yellow;
+  color: $nyx-blue-light;
   animation: moveLeft 9s linear infinite;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Dela Gothic One', sans-serif;
 }
 
 @keyframes moveLeft {

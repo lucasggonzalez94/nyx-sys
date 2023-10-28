@@ -6,9 +6,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import { InputSearchComponent } from './components/input-search/input-search.component';
-import { ProductsGridComponent } from '../products/components/products-grid/products-grid.component';
 import { ProductCardComponent } from '../products/components/product-card/product-card.component';
 import { CarouselTitleComponent } from './components/carousel-title/carousel-title.component';
+import { InputTextComponent } from './components/input-text/input-text.component';
+import { InputSelectComponent } from './components/input-select/input-select.component';
+import { FormsModule } from '@angular/forms';
+import { InputPriceComponent } from './components/input-price/input-price.component';
+import { CategoryCardComponent } from '../categories/components/category-card/category-card.component';
+import { ButtonComponent } from './components/button/button.component';
+import { GridComponent } from './components/grid/grid.component';
 
 
 
@@ -18,18 +24,28 @@ import { CarouselTitleComponent } from './components/carousel-title/carousel-tit
     FooterComponent,
     HomePageComponent,
     InputSearchComponent,
-    ProductsGridComponent,
+    CarouselTitleComponent,
+    InputTextComponent,
+    InputSelectComponent,
+    InputPriceComponent,
     ProductCardComponent,
-    CarouselTitleComponent
+    CategoryCardComponent,
+    ButtonComponent,
+    GridComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
-    ProductCardComponent
+    InputTextComponent,
+    InputSelectComponent,
+    InputPriceComponent,
+    ProductCardComponent,
+    GridComponent
   ]
 })
 export class SharedModule { }

@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductsGridComponent } from './components/products-grid/products-grid.component';
+import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +15,9 @@ import { ProductsGridComponent } from './components/products-grid/products-grid.
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    SharedModule,
+    RouterModule
   ]
 })
 export class ProductsModule { }
