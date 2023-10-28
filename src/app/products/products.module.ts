@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { ProductsRoutingModule } from './products-routing.module';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
-import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
-
-
+import { ProductPageComponent } from '../shared/pages/product-page/product-page.component';
+import { ProductsPageComponent } from '../shared/pages/products-page/products-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    ProductsPageComponent,
-    ProductPageComponent
+
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    SharedModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

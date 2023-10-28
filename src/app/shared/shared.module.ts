@@ -15,6 +15,9 @@ import { InputPriceComponent } from './components/input-price/input-price.compon
 import { CategoryCardComponent } from '../categories/components/category-card/category-card.component';
 import { ButtonComponent } from './components/button/button.component';
 import { GridComponent } from './components/grid/grid.component';
+import { ProductsModule } from '../products/products.module';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 
 
@@ -28,15 +31,17 @@ import { GridComponent } from './components/grid/grid.component';
     InputTextComponent,
     InputSelectComponent,
     InputPriceComponent,
+    ButtonComponent,
+    GridComponent,
     ProductCardComponent,
     CategoryCardComponent,
-    ButtonComponent,
-    GridComponent
+    ProductsPageComponent,
+    ProductPageComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     NavbarComponent,
@@ -44,8 +49,11 @@ import { GridComponent } from './components/grid/grid.component';
     InputTextComponent,
     InputSelectComponent,
     InputPriceComponent,
+    GridComponent,
     ProductCardComponent,
-    GridComponent
+    CategoryCardComponent,
+    ProductPageComponent,
+    ProductsPageComponent
   ]
 })
 export class SharedModule { }

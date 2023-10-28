@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { ProductsPageComponent } from './pages/products-page/products-page.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductsPageComponent } from '../shared/pages/products-page/products-page.component';
+import { ProductPageComponent } from '../shared/pages/product-page/product-page.component';
 
 const routes: Routes = [
   {
-    path: 'products',
+    path: 'list',
     component: ProductsPageComponent
   },
   {
-    path: 'product/:id',
+    path: 'detail/:id',
     component: ProductPageComponent
   },
   {
     path: '**',
-    redirectTo: 'products'
+    redirectTo: 'list'
   },
 ]
 

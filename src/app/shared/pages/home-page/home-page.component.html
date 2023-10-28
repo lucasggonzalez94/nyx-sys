@@ -1,10 +1,12 @@
-<div class="banner-container" routerLink="products">
+<div class="banner-container">
   <img
     src="assets/img/Banner-product.png"
     alt="Banner product"
     class="banner"
+    routerLink="/products/list"
   />
-  <img src="assets/img/Nyx-Sys device.png" alt="Nyx-Sys Device" class="float" />
+  <img src="assets/img/Nyx-Sys device.png" alt="Nyx-Sys Device" class="float"
+  routerLink="/products/list"/>
 </div>
 <shared-carousel-title [word]="'PRODUCTOS'"></shared-carousel-title>
 <div class="products-container">
@@ -16,7 +18,7 @@
     <product-card></product-card>
     <product-card></product-card>
   </shared-grid>
-  <shared-button buttonText="Ver todos" routerLink="products"></shared-button>
+  <shared-button buttonText="Ver todos" routerLink="/products/list"></shared-button>
 </div>
 <hr />
 <shared-grid title="Categorías populares">
