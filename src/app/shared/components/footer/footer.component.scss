@@ -1,57 +1,77 @@
-@import '../../../variables.scss';
+@import "../../../variables.scss";
 
 .footer {
   background: #000;
-  height: 60px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   margin: 10px;
   border-radius: 5px;
   padding: 15px;
   box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.8);
-  bottom: 0;
 
   .copy {
     color: #fff;
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin: 0;
+    margin-top: 25px;
   }
-}
 
-.input-group {
-  display: flex;
-  align-items: center;
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .suscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+
+    p {
+      margin: 0;
+      color: $text-light;
+    }
+  }
+
+  img {
+    width: 20%;
+  }
 }
 
 .input {
   min-height: 40px;
-  max-width: 150px;
+  max-width: 175px;
   padding: 0 1rem;
   color: #fff;
   font-size: 15px;
   border: 1px solid $nyx-blue;
   border-radius: 6px 0 0 6px;
-  background-color: transparent;
+  background-color: white;
 }
 
 .button--submit {
   min-height: 40px;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   border: none;
   border-radius: 0 6px 6px 0;
   background-color: $nyx-blue;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
-  transition: background-color .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .button--submit:hover {
-  background-color: #5e5dcd;
+  background-color: $nyx-blue-light;
 }
 
-.input:focus, .input:focus-visible {
-  border-color: #3898EC;
+.input:focus,
+.input:focus-visible {
+  border-color: $nyx-blue;
   outline: none;
 }

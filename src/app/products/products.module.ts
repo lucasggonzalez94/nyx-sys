@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { RouterModule } from '@angular/router';
-import { ProductPageComponent } from '../shared/pages/product-page/product-page.component';
-import { ProductsPageComponent } from '../shared/pages/products-page/products-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +15,10 @@ import { SharedModule } from '../shared/shared.module';
     ProductsRoutingModule,
     RouterModule,
     SharedModule
+  ],
+  exports: [
+    ProductsPageComponent,
+    ProductPageComponent
   ]
 })
 export class ProductsModule { }

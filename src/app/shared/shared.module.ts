@@ -15,9 +15,9 @@ import { InputPriceComponent } from './components/input-price/input-price.compon
 import { CategoryCardComponent } from '../categories/components/category-card/category-card.component';
 import { ButtonComponent } from './components/button/button.component';
 import { GridComponent } from './components/grid/grid.component';
-import { ProductsModule } from '../products/products.module';
-import { ProductsPageComponent } from './pages/products-page/products-page.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductsPageComponent } from '../products/pages/products-page/products-page.component';
+import { ProductPageComponent } from '../products/pages/product-page/product-page.component';
+import { ButtonIconComponent } from './components/button-icon/button-icon.component';
 
 
 
@@ -36,7 +36,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     ProductCardComponent,
     CategoryCardComponent,
     ProductsPageComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    ButtonIconComponent
   ],
   imports: [
     CommonModule,

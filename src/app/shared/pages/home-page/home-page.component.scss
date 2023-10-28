@@ -1,32 +1,8 @@
 .banner-container {
-  position: relative;
-
   .banner {
     cursor: pointer;
     width: 100%;
     margin-bottom: 16px;
-  }
-
-  .float {
-    width: 45%;
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 1));
-    animation: floatAnimation 3s infinite;
-    cursor: pointer;
-  }
-
-  @keyframes floatAnimation {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
   }
 }
 
