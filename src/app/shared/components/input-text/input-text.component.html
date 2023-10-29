@@ -1,3 +1,9 @@
 <div class="input-container">
-  <input type="text" name="text" class="input" placeholder="Enter text">
+  <input
+    type="text"
+    [placeholder]="placeholder"
+    class="input"
+    (keyup.enter)="emitValue()"
+    [(ngModel)]="initialValue"
+  >
 </div>

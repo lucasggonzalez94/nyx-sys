@@ -1,6 +1,10 @@
 <div class="page-container">
   <div class="filters-container">
-    <shared-input-text class="mb-4 w-100"></shared-input-text>
+    <shared-input-text
+      class="mb-4 w-100"
+      placeholder="Buscar por nombre"
+      (onKeyPressEnter)="searchProducts($event)"
+    ></shared-input-text>
     <shared-input-select class="mb-4 w-100"></shared-input-select>
     <shared-input-price></shared-input-price>
   </div>

@@ -30,6 +30,11 @@ export class ProductsPageComponent {
       });
   }
 
+  searchProducts(term: string) {
+    this.productsService.searchTerm = term;
+    this.getAllProducts();
+  }
+
   loadProducts(page: number) {
     const startIndex = (page - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
