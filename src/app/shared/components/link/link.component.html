@@ -1,9 +1,0 @@
-<a
-  [routerLink]="redirectTo"
-  class="menu__link"
-  *ngIf="redirectTo; else functionalLink"
->{{ textLink }}</a>
-
-<ng-template #functionalLink>
-  <a (click)="onClick" class="menu__link">{{ textLink }}</a>
-</ng-template>

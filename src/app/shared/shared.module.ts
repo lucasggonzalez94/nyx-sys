@@ -18,7 +18,6 @@ import { GridComponent } from './components/grid/grid.component';
 import { ProductsPageComponent } from '../products/pages/products-page/products-page.component';
 import { ProductPageComponent } from '../products/pages/product-page/product-page.component';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
-import { LinkComponent } from './components/link/link.component';
 
 
 
@@ -38,8 +37,7 @@ import { LinkComponent } from './components/link/link.component';
     CategoryCardComponent,
     ProductsPageComponent,
     ProductPageComponent,
-    ButtonIconComponent,
-    LinkComponent
+    ButtonIconComponent
   ],
   imports: [
     CommonModule,
