@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../../interfaces/products.interface';
 import { ProductsService } from '../../services/products.service';
+import { Price } from 'src/app/shared/interfaces/price.interface';
 
 @Component({
   selector: 'app-products-page',
@@ -27,11 +28,36 @@ export class ProductsPageComponent {
         this.allProducts = products;
         this.isLoading = false;
         this.loadProducts(this.currentPage);
+        this.productsService.searchTerms = {
+          name: '',
+          category: '',
+          price: {
+            minPrice: '0',
+            maxPrice: '99999999999999'
+          }
+        };
       });
   }
 
-  searchProducts(term: string) {
-    this.productsService.searchTerm = term;
+  searchProductsByName(name: string) {
+    this.productsService.searchTerms = {
+      ...this.productsService.searchTerms,
+      name
+    };
+    this.getAllProducts();
+  }
+  searchProductsByCategory(category: string) {
+    this.productsService.searchTerms = {
+      ...this.productsService.searchTerms,
+      category
+    };
+    this.getAllProducts();
+  }
+  searchProductsByPrice(price: Price) {
+    this.productsService.searchTerms = {
+      ...this.productsService.searchTerms,
+      price
+    };
     this.getAllProducts();
   }
 

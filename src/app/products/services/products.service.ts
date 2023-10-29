@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Name, Product } from '../interfaces/products.interface';
+import { SearchTerms } from '../interfaces/searchTerms.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,14 @@ import { Name, Product } from '../interfaces/products.interface';
 export class ProductsService {
 
   private baseUrl: string = 'https://api.escuelajs.co/api/v1';
-  public searchTerm: string = '';
+  public searchTerms: SearchTerms = {
+    name: '',
+    category: '',
+    price: {
+      minPrice: '0',
+      maxPrice: '99999999999999'
+    }
+  };
 
   constructor( private http: HttpClient ) { }
 
@@ -32,11 +40,13 @@ export class ProductsService {
     const url = `${this.baseUrl}/products`;
     return this.getProductsRequest(url)
       .pipe(
-        map(products => products.filter(product => product.title.toLocaleLowerCase().includes(this.searchTerm)))
+        map(products => products.filter(product => product.title.toLocaleLowerCase().includes(this.searchTerms.name))),
+        map(products => products.filter(product => product.category.name.toLocaleLowerCase().includes(this.searchTerms.category.toLocaleLowerCase()))),
+        map(products => products.filter(product => product.price >= Number(this.searchTerms.price.minPrice) && product.price <= Number(this.searchTerms.price.maxPrice)))
       );
   }
 
-  setSearchTerm(term: string) {
-    this.searchTerm = term;
+  setSearchTerm(terms: SearchTerms) {
+    this.searchTerms = terms;
   }
 }

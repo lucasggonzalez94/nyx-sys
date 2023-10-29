@@ -31,8 +31,11 @@ export class NavbarComponent {
     }
   }
 
-  searchProducts(term: string) {
-    this.productsService.setSearchTerm(term);
+  searchProducts(name: string) {
+    this.productsService.searchTerms = {
+      ...this.productsService.searchTerms,
+      name
+    };
     this.router.navigate(['products/list']);
   }
 }

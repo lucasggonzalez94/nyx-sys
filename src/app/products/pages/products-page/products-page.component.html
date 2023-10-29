@@ -3,10 +3,15 @@
     <shared-input-text
       class="mb-4 w-100"
       placeholder="Buscar por nombre"
-      (onKeyPressEnter)="searchProducts($event)"
+      (onKeyPressEnter)="searchProductsByName($event)"
     ></shared-input-text>
-    <shared-input-select class="mb-4 w-100"></shared-input-select>
-    <shared-input-price></shared-input-price>
+    <shared-input-select
+      class="mb-4 w-100"
+      (onChange)="searchProductsByCategory($event)"
+    ></shared-input-select>
+    <shared-input-price
+      (onKeyPressEnter)="searchProductsByPrice($event)"
+    ></shared-input-price>
   </div>
   <div class="products">
     <shared-grid class="w-100">

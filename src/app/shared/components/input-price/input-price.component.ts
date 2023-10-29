@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Price } from '../../interfaces/price.interface';
+import { ProductsService } from 'src/app/products/services/products.service';
 
 @Component({
   selector: 'shared-input-price',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./input-price.component.scss']
 })
 export class InputPriceComponent {
+  constructor( private productsService: ProductsService ) {}
 
+  public minPrice: string = '';
+  public maxPrice: string = '';
+
+  @Output()
+  public onKeyPressEnter = new EventEmitter<Price>();
+
+  emitValue(): void {
+    this.onKeyPressEnter.emit({
+      minPrice: this.minPrice || this.productsService.searchTerms.price.minPrice,
+      maxPrice: this.maxPrice || this.productsService.searchTerms.price.maxPrice
+    });
+  }
 }
