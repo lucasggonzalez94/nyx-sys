@@ -9,12 +9,12 @@ export class InputTextComponent {
   @Input()
   public placeholder: string = '';
   @Input()
-  public initialValue: string = '';
+  public productName: string = '';
 
   @Output()
   public onChange = new EventEmitter<string>();
 
   emitValue(): void {
-    this.onChange.emit(this.initialValue);
+    this.onChange.emit(this.productName);
   }
 }
