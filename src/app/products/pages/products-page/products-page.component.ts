@@ -9,13 +9,17 @@ import { Price } from 'src/app/shared/interfaces/price.interface';
   styleUrls: ['./products-page.component.scss']
 })
 export class ProductsPageComponent {
+  constructor ( private productsService: ProductsService ) {}
+
   public allProducts: Product[] = [];
   public products: Product[] = [];
   public currentPage: number = 1;
   public pageSize: number = 12;
   public isLoading: boolean = false;
+  public name: string = this.productsService.searchTerms.name;
+  public category: string = this.productsService.searchTerms.category;
+  public price: Price = this.productsService.searchTerms.price;
 
-  constructor ( private productsService: ProductsService ) {}
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -39,24 +43,22 @@ export class ProductsPageComponent {
       });
   }
 
-  searchProductsByName(name: string) {
-    this.productsService.searchTerms = {
-      ...this.productsService.searchTerms,
-      name
-    };
-    this.getAllProducts();
+  setName(name: string) {
+    this.name = name;
   }
-  searchProductsByCategory(category: string) {
-    this.productsService.searchTerms = {
-      ...this.productsService.searchTerms,
-      category
-    };
-    this.getAllProducts();
+  setCategory(category: string) {
+    this.category = category;
+    this.searchProducts();
   }
-  searchProductsByPrice(price: Price) {
+  setPrice(price: Price) {
+    this.price = price
+  }
+
+  searchProducts() {
     this.productsService.searchTerms = {
-      ...this.productsService.searchTerms,
-      price
+      name: this.name,
+      category: this.category,
+      price: this.price
     };
     this.getAllProducts();
   }

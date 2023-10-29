@@ -12,9 +12,9 @@ export class InputTextComponent {
   public initialValue: string = '';
 
   @Output()
-  public onKeyPressEnter = new EventEmitter<string>();
+  public onChange = new EventEmitter<string>();
 
   emitValue(): void {
-    this.onKeyPressEnter.emit(this.initialValue);
+    this.onChange.emit(this.initialValue);
   }
 }

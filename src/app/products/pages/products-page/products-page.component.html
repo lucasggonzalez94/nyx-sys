@@ -3,14 +3,16 @@
     <shared-input-text
       class="mb-4 w-100"
       placeholder="Buscar por nombre"
-      (onKeyPressEnter)="searchProductsByName($event)"
+      (onChange)="setName($event)"
+      (keyup.enter)="searchProducts()"
     ></shared-input-text>
     <shared-input-select
       class="mb-4 w-100"
-      (onChange)="searchProductsByCategory($event)"
+      (onChange)="setCategory($event)"
     ></shared-input-select>
     <shared-input-price
-      (onKeyPressEnter)="searchProductsByPrice($event)"
+      (onChange)="setPrice($event)"
+      (keyup.enter)="searchProducts()"
     ></shared-input-price>
   </div>
   <div class="products">

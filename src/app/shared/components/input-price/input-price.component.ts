@@ -14,10 +14,10 @@ export class InputPriceComponent {
   public maxPrice: string = '';
 
   @Output()
-  public onKeyPressEnter = new EventEmitter<Price>();
+  public onChange = new EventEmitter<Price>();
 
   emitValue(): void {
-    this.onKeyPressEnter.emit({
+    this.onChange.emit({
       minPrice: this.minPrice || this.productsService.searchTerms.price.minPrice,
       maxPrice: this.maxPrice || this.productsService.searchTerms.price.maxPrice
     });

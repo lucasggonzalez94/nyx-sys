@@ -3,7 +3,7 @@
     type="text"
     [placeholder]="placeholder"
     class="input"
-    (keyup.enter)="emitValue()"
+    (change)="emitValue()"
     [(ngModel)]="initialValue"
   >
 </div>
