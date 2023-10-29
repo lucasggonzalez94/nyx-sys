@@ -9,7 +9,7 @@
 <shared-carousel-title [word]="'PRODUCTOS'"></shared-carousel-title>
 <div class="products-container">
   <shared-grid>
-    <product-card *ngFor="let product of products" [product]="product"></product-card>
+    <product-card *ngFor="let product of products.slice(0, 6)" [product]="product"></product-card>
   </shared-grid>
   <shared-button buttonText="Ver todos" routerLink="/products/list"></shared-button>
 </div>

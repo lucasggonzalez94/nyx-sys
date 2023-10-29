@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'shared-input-text',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./input-text.component.scss']
 })
 export class InputTextComponent {
+  @Input()
+  public placeholder: string = '';
+  @Input()
+  public initialValue: string = '';
 
+  @Output()
+  public onKeyPressEnter = new EventEmitter<string>();
+
+  emitValue(): void {
+    this.onKeyPressEnter.emit(this.initialValue);
+  }
 }

@@ -4,12 +4,16 @@
     <shared-input-select class="mb-4 w-100"></shared-input-select>
     <shared-input-price></shared-input-price>
   </div>
-  <shared-grid class="w-100">
-    <product-card></product-card>
-    <product-card></product-card>
-    <product-card></product-card>
-    <product-card></product-card>
-    <product-card></product-card>
-    <product-card></product-card>
-  </shared-grid>
+  <div class="products">
+    <shared-grid class="w-100">
+      <product-card
+        *ngFor="let product of products"
+        [product]="product"
+      ></product-card>
+    </shared-grid>
+    <div class="pagination">
+      <a (click)="previousPage()" class="menu__link">< Anterior</a>
+      <a (click)="nextPage()" class="menu__link">Siguiente ></a>
+    </div>
+  </div>
 </div>

@@ -16,3 +16,41 @@
   align-items: center;
   border-right: 1px solid $text-light;
 }
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .pagination {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.menu__link {
+  color: $text-dark;
+  line-height: 1.5;
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu__link::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: $text-dark;
+  position: absolute;
+  bottom: -0.1rem;
+  left: 50%;
+  transition: width 0.4s, left 0.4s;
+}
+
+.menu__link:hover::before {
+  width: 100%;
+  left: 0;
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Products } from 'src/app/products/interfaces/products';
+import { Product } from 'src/app/products/interfaces/products.interface';
 import { ProductsService } from 'src/app/products/services/products.service';
 
 @Component({
@@ -8,23 +8,21 @@ import { ProductsService } from 'src/app/products/services/products.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
-  public products: Products[] = [];
+  public products: Product[] = [];
   public isLoading: boolean = false;
 
   constructor ( private productsService: ProductsService ) {}
 
   ngOnInit(): void {
     this.getAllProducts();
-    this.products = this.productsService.cacheStore;
   }
 
   getAllProducts(): void {
     this.isLoading = true;
     this.productsService.getAllProducts()
-      .subscribe( (products: Products[]) => {
+      .subscribe( (products: Product[]) => {
         this.products = products;
         this.isLoading = false;
       });
   }
-
 }

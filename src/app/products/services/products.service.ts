@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of, tap } from 'rxjs';
-import { Products } from '../interfaces/products';
+import { Name, Product } from '../interfaces/products.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,37 +9,34 @@ import { Products } from '../interfaces/products';
 export class ProductsService {
 
   private baseUrl: string = 'https://api.escuelajs.co/api/v1';
+  public searchTerm: string = '';
 
-  public cacheStore: Products[] = [];
+  constructor( private http: HttpClient ) { }
 
-  constructor( private http: HttpClient ) {
-    this.loadFromLocalStorage();
-  }
-
-  private saveToLocalStorage() {
-    localStorage.setItem('store', JSON.stringify(this.cacheStore));
-  }
-
-  private loadFromLocalStorage() {
-    const store = localStorage.getItem('store');
-    if (store) {
-      this.cacheStore = JSON.parse(store);
-    }
-  }
-
-  private getProductsRequest( url: string ): Observable<Products[]> {
-    return this.http.get<Products[]>( url )
+  private getProductsRequest( url: string ): Observable<Product[]> {
+    return this.http.get<Product[]>( url )
       .pipe(
         catchError(error => of([]))
       );
   }
 
-  getAllProducts(): Observable<Products[]> {
+  getAllProducts(): Observable<Product[]> {
     const url = `${this.baseUrl}/products`;
     return this.getProductsRequest(url)
       .pipe(
-        tap(products => this.cacheStore = products),
-        tap(() => this.saveToLocalStorage())
+        map(products => products.filter(product => Object.values(Name).includes(product.category.name as Name)))
       );
+  }
+
+  searchProducts(): Observable<Product[]> {
+    const url = `${this.baseUrl}/products`;
+    return this.getProductsRequest(url)
+      .pipe(
+        map(products => products.filter(product => product.title.toLocaleLowerCase().includes(this.searchTerm)))
+      );
+  }
+
+  setSearchTerm(term: string) {
+    this.searchTerm = term;
   }
 }

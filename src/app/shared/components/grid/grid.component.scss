@@ -6,9 +6,7 @@
 
   .grid-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas con ancho igual */
-    grid-gap: 20px; /* Espacio entre tarjetas */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
   }
 }
