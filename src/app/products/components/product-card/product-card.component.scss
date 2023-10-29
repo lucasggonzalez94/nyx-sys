@@ -21,9 +21,18 @@
   font-weight: bolder;
   color: black;
   overflow: hidden;
+  text-decoration: none;
 
-  img {
-    height: 180px;
+  .img {
+    height: 50rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
   }
 
   .card-content {

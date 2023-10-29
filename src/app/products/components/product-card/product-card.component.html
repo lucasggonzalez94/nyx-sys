@@ -1,13 +1,12 @@
-<a class="card-product" [routerLink]="['/products/detail', 15]" >
-  <img
-    src="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"
-    alt=""
-  />
+<a class="card-product" [routerLink]="['/products/detail', 15]">
+  <div class="img">
+    <img [src]="product.images[0]" [alt]="product.description" />
+  </div>
   <div class="card-content">
     <div class="card-description">
-      <h4 class="card-title">Notebook 15'</h4>
-      <p class="category">Categoría</p>
+      <h4 class="card-title">{{ product.title }}</h4>
+      <p class="category">{{ product.category.name }}</p>
     </div>
-    <p>$100</p>
+    <p>{{ product.price | currency }}</p>
   </div>
 </a>
