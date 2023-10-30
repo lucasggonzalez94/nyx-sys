@@ -40,7 +40,7 @@ export class ProductsService {
     return this.getProductsRequest(url).pipe(
       map((products) =>
         products.filter((product) =>
-          product.title.toLocaleLowerCase().includes(this.searchTerms.name)
+          product.title.toLocaleLowerCase().includes(this.searchTerms.name.toLocaleLowerCase())
         )
       ),
       map((products) =>
