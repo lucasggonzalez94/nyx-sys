@@ -2,6 +2,10 @@
 
 .input-container {
   width: 100%;
+
+  input {
+    min-width: 145px;
+  }
 }
 
 label {

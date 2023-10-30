@@ -2,16 +2,17 @@
 <div class="page-container">
   <div class="filters-container">
     <shared-input-text
-      class="mb-4 w-100"
+      class="w-100"
       placeholder="Buscar por nombre"
       (onChange)="setName($event)"
       (keyup.enter)="searchProducts()"
     ></shared-input-text>
     <shared-input-select
-      class="mb-4 w-100"
+      class="w-100"
       (onChange)="setCategory($event)"
     ></shared-input-select>
     <shared-input-price
+      class="w-100"
       (onChange)="setPrice($event)"
       (keyup.enter)="searchProducts()"
     ></shared-input-price>

@@ -1,9 +1,16 @@
 @import '../../../variables.scss';
 
 .price-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  .inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      min-width: 5.3125rem;
+    }
+  }
 
   span {
     margin: 0 0.625rem;

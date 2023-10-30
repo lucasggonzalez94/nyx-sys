@@ -1,20 +1,22 @@
-<label>Precio</label>
 <div class="price-container" (change)="emitValue()">
-  <input
-    type="number"
-    class="input"
-    placeholder="Min"
-    min="0"
-    [(ngModel)]="minPrice"
-    name="minPrice"
-  />
-  <span>-</span>
-  <input
-    type="number"
-    class="input"
-    placeholder="Max"
-    min="0"
-    [(ngModel)]="maxPrice"
-    name="maxPrice"
-  />
+  <label>Precio</label>
+  <div class="inputs">
+    <input
+      type="number"
+      class="input"
+      placeholder="Min"
+      min="0"
+      [(ngModel)]="minPrice"
+      name="minPrice"
+    />
+    <span>-</span>
+    <input
+      type="number"
+      class="input"
+      placeholder="Max"
+      min="0"
+      [(ngModel)]="maxPrice"
+      name="maxPrice"
+    />
+  </div>
 </div>

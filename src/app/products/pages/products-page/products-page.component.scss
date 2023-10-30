@@ -5,6 +5,13 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 930px) {
+  .page-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 .filters-container {
   margin: 1rem 0.625rem;
   padding-right: 0.9375rem;
@@ -30,6 +37,30 @@
       padding: 0.375rem 0.625rem;
       border-radius: 0.3125rem;
     }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .filters-container {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-right: none;
+    border-bottom: 1px solid $text-light;
+    padding-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .filters-container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-right: none;
+    border-bottom: 1px solid $text-light;
+    padding-bottom: 15px;
   }
 }
 

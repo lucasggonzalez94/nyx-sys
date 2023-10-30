@@ -15,6 +15,10 @@ select {
 
 .input {
   padding: .5rem .7rem;
+
+  select {
+    min-width: 145px;
+  }
 }
 
 label {
