@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .detail-container {
   width: 100%;
   display: flex;
@@ -16,12 +18,21 @@
     justify-content: space-between;
 
     .info {
+      .title {
+        margin-bottom: .3rem;
+      }
       .price {
         width: 100%;
         display: block;
         text-align: end;
         font-size: 24px;
         font-weight: bold;
+      }
+      .category {
+        font-size: .8rem;
+        color: $text-light;
+        margin-top: 0;
+        margin-bottom: 20px;
       }
     }
 

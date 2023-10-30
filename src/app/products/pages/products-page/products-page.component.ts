@@ -54,6 +54,18 @@ export class ProductsPageComponent {
     this.price = price
   }
 
+  deleteFilters() {
+    this.productsService.searchTerms = {
+      name: '',
+      category: '',
+      price: {
+        minPrice: '0',
+        maxPrice: '99999999999999'
+      }
+    };
+    this.getAllProducts();
+  }
+
   searchProducts() {
     this.productsService.searchTerms = {
       name: this.name,

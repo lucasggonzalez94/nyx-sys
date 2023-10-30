@@ -18,6 +18,8 @@ import { GridComponent } from './components/grid/grid.component';
 import { ProductsPageComponent } from '../products/pages/products-page/products-page.component';
 import { ProductPageComponent } from '../products/pages/product-page/product-page.component';
 import { ButtonIconComponent } from './components/button-icon/button-icon.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -37,7 +39,9 @@ import { ButtonIconComponent } from './components/button-icon/button-icon.compon
     CategoryCardComponent,
     ProductsPageComponent,
     ProductPageComponent,
-    ButtonIconComponent
+    ButtonIconComponent,
+    CarouselComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +58,8 @@ import { ButtonIconComponent } from './components/button-icon/button-icon.compon
     ProductCardComponent,
     CategoryCardComponent,
     ProductPageComponent,
-    ProductsPageComponent
+    ProductsPageComponent,
+    CarouselComponent
   ]
 })
 export class SharedModule { }

@@ -14,6 +14,9 @@
       (onChange)="setPrice($event)"
       (keyup.enter)="searchProducts()"
     ></shared-input-price>
+    <div class="btn-container">
+      <button (click)="deleteFilters()">Borrar</button>
+    </div>
   </div>
   <div class="products">
     <shared-grid class="w-100">
