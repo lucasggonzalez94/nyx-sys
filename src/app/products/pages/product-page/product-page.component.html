@@ -1,16 +1,22 @@
 <shared-spinner *ngIf="loadingService.loading"></shared-spinner>
 <div class="container">
-  <div class="detail-container">
-    <shared-carousel [images]="product!.images"></shared-carousel>
-    <div class="description-product">
-      <div class="info" [ngClass]="{'dark': themeService.currentTheme === 'dark'}">
-        <h3 class="title">{{ product!.title }}</h3>
-        <h5 class="category">{{ product!.category!.name }}</h5>
-        <p class="description">{{ product!.description }}</p>
-        <span class="price">{{ product!.price | currency }}</span>
-      </div>
-      <div class="buttons">
-        <shared-button buttonText="Comprar"></shared-button>
+  <div class="product-container">
+    <a routerLink="products">< Volver</a>
+    <div class="detail-container">
+      <shared-carousel [images]="product!.images"></shared-carousel>
+      <div class="description-product">
+        <div
+          class="info"
+          [ngClass]="{ dark: themeService.currentTheme === 'dark' }"
+        >
+          <h3 class="title">{{ product!.title }}</h3>
+          <h5 class="category">{{ product!.category!.name }}</h5>
+          <p class="description">{{ product!.description }}</p>
+          <span class="price">{{ product!.price | currency }}</span>
+        </div>
+        <div class="buttons">
+          <shared-button buttonText="Comprar"></shared-button>
+        </div>
       </div>
     </div>
   </div>
