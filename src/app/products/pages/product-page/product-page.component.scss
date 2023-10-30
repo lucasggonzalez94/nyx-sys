@@ -45,3 +45,17 @@
     }
   }
 }
+
+@media screen and (max-width: 570px) {
+  .detail-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding-bottom: 15px;
+
+    .description-product {
+      width: 100%;
+      gap: 15px;
+    }
+  }
+}
