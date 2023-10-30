@@ -3,6 +3,7 @@ import { ProductsService } from '../../services/products.service';
 import { Product } from '../../interfaces/products.interface';
 import { ActivatedRoute, Params } from '@angular/router';
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { ThemeService } from 'src/app/shared/services/theme.service';
 
 @Component({
   selector: 'product-page',
@@ -13,7 +14,8 @@ export class ProductPageComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute,
-    public loadingService: LoadingService
+    public loadingService: LoadingService,
+    public themeService: ThemeService
   ) {}
 
   ngOnInit() {

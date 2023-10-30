@@ -3,7 +3,7 @@
   <div class="detail-container">
     <shared-carousel [images]="product!.images"></shared-carousel>
     <div class="description-product">
-      <div class="info">
+      <div class="info" [ngClass]="{'dark': themeService.currentTheme === 'dark'}">
         <h3 class="title">{{ product!.title }}</h3>
         <h5 class="category">{{ product!.category!.name }}</h5>
         <p class="description">{{ product!.description }}</p>

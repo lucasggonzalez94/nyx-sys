@@ -36,6 +36,10 @@
       }
     }
 
+    .info.dark {
+      filter: invert(1);
+    }
+
     .buttons {
       display: flex;
       justify-content: flex-end;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/products/services/products.service';
 import { NavigationService } from '../../services/navigation.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'shared-navbar',
@@ -15,7 +16,8 @@ export class NavbarComponent {
   constructor(
     private productsService: ProductsService,
     private router: Router,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    public themeService: ThemeService
   ) {
     this.navigationService.routeChange.subscribe((route) => {
       this.currentRoute = route; // Almacena la ruta actual
