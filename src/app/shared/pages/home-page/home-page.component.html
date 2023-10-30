@@ -1,25 +1,31 @@
 <shared-spinner *ngIf="loadingService.loading"></shared-spinner>
 <div class="banner-container">
-  <img
+  <!-- <img
     src="assets/img/Banner-product.png"
     alt="Banner product"
     class="banner"
     routerLink="/products/list"
-  />
+  /> -->
+  <picture class="banner" routerLink="/products/list">
+    <source
+      media="(min-width: 1024px)"
+      srcset="assets/img/Banner-product.png"
+    />
+    <source media="(min-width: 768px)" srcset="assets/img/Banner-mobile.webp" />
+    <img src="assets/img/Banner-mobile.webp" alt="Imagen por defecto" />
+  </picture>
 </div>
 <shared-carousel-title [word]="'PRODUCTOS'"></shared-carousel-title>
 <div class="products-container">
   <shared-grid>
-    <product-card *ngFor="let product of products.slice(0, 6)" [product]="product"></product-card>
+    <product-card
+      *ngFor="let product of products.slice(0, 6)"
+      [product]="product"
+    ></product-card>
   </shared-grid>
-  <shared-button buttonText="Ver todos" routerLink="/products/list"></shared-button>
+  <shared-button
+    buttonText="Ver todos"
+    routerLink="/products/list"
+  ></shared-button>
 </div>
 <hr />
-<shared-grid title="Categorías populares">
-  <category-card></category-card>
-  <category-card></category-card>
-  <category-card></category-card>
-  <category-card></category-card>
-  <category-card></category-card>
-  <category-card></category-card>
-</shared-grid>

@@ -1,19 +1,17 @@
-<nav class="navbar">
+<nav class="custom-navbar">
   <img routerLink="home" src="assets/img/NYXSYS_BLACK.png" alt="Logo nyxsys" />
   <shared-input-search
-    *ngIf="!inProductsPage;"
+    *ngIf="!inProductsPage"
     (onKeyPressEnter)="searchProducts($event)"
     placeholder="Buscar..."
   ></shared-input-search>
-  <div class="links">
-    <a
-      *ngIf="!inProductsPage; else homeLink"
-      routerLink="products/link"
-      class="menu__link"
-    >Productos</a>
-    <ng-template #homeLink>
-      <a [routerLink]="['/home']" class="menu__link">Inicio</a>
-    </ng-template>
-    <!-- <shared-button-icon></shared-button-icon> -->
-  </div>
+  <a
+    *ngIf="!inProductsPage; else homeLink"
+    routerLink="products/link"
+    class="menu__link"
+    >Productos</a
+  >
+  <ng-template #homeLink>
+    <a [routerLink]="['/home']" class="menu__link">Inicio</a>
+  </ng-template>
 </nav>

@@ -12,7 +12,6 @@ import { InputTextComponent } from './components/input-text/input-text.component
 import { InputSelectComponent } from './components/input-select/input-select.component';
 import { FormsModule } from '@angular/forms';
 import { InputPriceComponent } from './components/input-price/input-price.component';
-import { CategoryCardComponent } from '../categories/components/category-card/category-card.component';
 import { ButtonComponent } from './components/button/button.component';
 import { GridComponent } from './components/grid/grid.component';
 import { ProductsPageComponent } from '../products/pages/products-page/products-page.component';
@@ -36,7 +35,6 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ButtonComponent,
     GridComponent,
     ProductCardComponent,
-    CategoryCardComponent,
     ProductsPageComponent,
     ProductPageComponent,
     ButtonIconComponent,
@@ -56,7 +54,6 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     InputPriceComponent,
     GridComponent,
     ProductCardComponent,
-    CategoryCardComponent,
     ProductPageComponent,
     ProductsPageComponent,
     CarouselComponent,

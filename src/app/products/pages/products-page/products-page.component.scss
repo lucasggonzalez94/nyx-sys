@@ -6,12 +6,12 @@
 }
 
 .filters-container {
-  margin: 16px 10px;
-  padding-right: 15px;
+  margin: 1rem 0.625rem;
+  padding-right: 0.9375rem;
   display: flex;
   flex-direction: column;
-  width: 280px;
-  gap: 10px;
+  width: 17.5rem;
+  gap: 0.625rem;
   justify-content: flex-start;
   align-items: center;
   border-right: 1px solid $text-light;
@@ -21,14 +21,14 @@
     display: flex;
     justify-content: flex-end;
     padding: 0;
-    margin-top: 15px;
+    margin-top: 0.9375rem;
 
     button {
       border: none;
       background-color: $nyx-blue;
       color: white;
-      padding: 6px 10px;
-      border-radius: 5px;
+      padding: 0.375rem 0.625rem;
+      border-radius: 0.3125rem;
     }
   }
 }
@@ -42,8 +42,8 @@
 
   .pagination {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 0.625rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -58,8 +58,8 @@
 .menu__link::before {
   content: "";
   width: 0;
-  height: 2px;
-  border-radius: 2px;
+  height: 0.125rem;
+  border-radius: 0.125rem;
   background-color: $text-dark;
   position: absolute;
   bottom: -0.1rem;

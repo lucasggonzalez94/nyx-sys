@@ -1,19 +1,22 @@
 @import "./../../../variables.scss";
 
-.navbar {
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: linear-gradient(
     140deg,
     rgba(48, 67, 206, 1) 12%,
     rgba(4, 12, 60, 1) 100%
   );
   background-blend-mode: normal;
-  margin: 10px 10px 12px 10px;
-  border-radius: 5px;
-  padding: 15px;
-  box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.8);
+  margin: 0.625rem 0.625rem 0.75rem 0.625rem;
+  border-radius: 0.3125rem;
+  padding: 0.9375rem;
+  box-shadow: 0.125rem 0.125rem 0.5625rem 0rem rgba(0, 0, 0, 0.8);
 
   img {
-    width: 200px;
+    width: 12.5rem;
     cursor: pointer;
   }
 
@@ -26,8 +29,8 @@
   .menu__link::before {
     content: "";
     width: 0;
-    height: 2px;
-    border-radius: 2px;
+    height: 0.125rem;
+    border-radius: 0.125rem;
     background-color: #fff;
     position: absolute;
     bottom: -0.1rem;
@@ -39,9 +42,11 @@
     width: 100%;
     left: 0;
   }
+}
 
-  .links {
-    display: flex;
+@media screen and (max-width: 540px) {
+  .custom-navbar {
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 20px;

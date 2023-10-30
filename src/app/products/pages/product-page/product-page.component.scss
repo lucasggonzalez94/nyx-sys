@@ -7,12 +7,12 @@
 
   img {
     width: 50%;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
 
   .description-product {
     width: 50%;
-    padding: 0 20px;
+    padding: 0 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,14 +25,14 @@
         width: 100%;
         display: block;
         text-align: end;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
       }
       .category {
         font-size: .8rem;
         color: $text-light;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
       }
     }
 
@@ -41,7 +41,7 @@
       justify-content: flex-end;
       align-items: flex-end;
       flex-direction: column;
-      gap: 15px;
+      gap: 0.9375rem;
     }
   }
 }
