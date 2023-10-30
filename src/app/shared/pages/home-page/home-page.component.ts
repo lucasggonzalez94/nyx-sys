@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from 'src/app/products/interfaces/products.interface';
 import { ProductsService } from 'src/app/products/services/products.service';
+import { LoadingService } from '../../services/loading.service';
 
 @Component({
   selector: 'shared-home-page',
@@ -9,20 +10,19 @@ import { ProductsService } from 'src/app/products/services/products.service';
 })
 export class HomePageComponent {
   public products: Product[] = [];
-  public isLoading: boolean = false;
 
-  constructor ( private productsService: ProductsService ) {}
+  constructor ( private productsService: ProductsService, public loadingService: LoadingService ) {}
 
   ngOnInit(): void {
     this.getAllProducts();
   }
 
   getAllProducts(): void {
-    this.isLoading = true;
+    this.loadingService.showLoading();
     this.productsService.getAllProducts()
       .subscribe( (products: Product[]) => {
         this.products = products;
-        this.isLoading = false;
+        this.loadingService.hideLoading();
       });
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from '../../interfaces/products.interface';
 import { ProductsService } from '../../services/products.service';
 import { Price } from 'src/app/shared/interfaces/price.interface';
+import { LoadingService } from 'src/app/shared/services/loading.service';
 
 @Component({
   selector: 'app-products-page',
@@ -9,7 +10,7 @@ import { Price } from 'src/app/shared/interfaces/price.interface';
   styleUrls: ['./products-page.component.scss']
 })
 export class ProductsPageComponent {
-  constructor ( private productsService: ProductsService ) {}
+  constructor ( private productsService: ProductsService, public loadingService: LoadingService ) {}
 
   public allProducts: Product[] = [];
   public products: Product[] = [];
@@ -26,11 +27,11 @@ export class ProductsPageComponent {
   }
 
   getAllProducts(): void {
-    this.isLoading = true;
+    this.loadingService.showLoading();
     this.productsService.searchProducts()
       .subscribe( (products: Product[]) => {
         this.allProducts = products;
-        this.isLoading = false;
+        this.loadingService.hideLoading();
         this.loadProducts(this.currentPage);
         this.productsService.searchTerms = {
           name: '',

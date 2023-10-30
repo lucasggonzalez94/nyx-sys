@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../interfaces/products.interface';
 import { ActivatedRoute, Params } from '@angular/router';
+import { LoadingService } from 'src/app/shared/services/loading.service';
 
 @Component({
   selector: 'product-page',
@@ -11,15 +12,20 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ProductPageComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public loadingService: LoadingService
   ) {}
 
   ngOnInit() {
+    this.loadingService.showLoading();
     this.route.params.subscribe((params: Params) => {
       const productId = params['id'];
       this.productsService
         .searchProductById(productId)
-        .subscribe((product) => (this.product = product));
+        .subscribe((product) => {
+          this.product = product;
+          this.loadingService.hideLoading();
+        });
     });
   }
 

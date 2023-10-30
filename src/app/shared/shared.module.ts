@@ -59,7 +59,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     CategoryCardComponent,
     ProductPageComponent,
     ProductsPageComponent,
-    CarouselComponent
+    CarouselComponent,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }
