@@ -28,7 +28,7 @@
         [product]="product"
       ></product-card>
     </shared-grid>
-    <div class="pagination">
+    <div class="pagination" [ngClass]="{ dark: themeService.currentTheme === 'dark' }">
       <a (click)="previousPage()" class="menu__link">< Anterior</a>
       <a (click)="nextPage()" class="menu__link">Siguiente ></a>
     </div>

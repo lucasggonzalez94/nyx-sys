@@ -85,6 +85,10 @@
     gap: 0.625rem;
     margin-bottom: 1.25rem;
   }
+
+  .pagination.dark {
+    filter: invert(.8);
+  }
 }
 
 .menu__link {

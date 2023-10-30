@@ -3,14 +3,19 @@ import { Product } from '../../interfaces/products.interface';
 import { ProductsService } from '../../services/products.service';
 import { Price } from 'src/app/shared/interfaces/price.interface';
 import { LoadingService } from 'src/app/shared/services/loading.service';
+import { ThemeService } from 'src/app/shared/services/theme.service';
 
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
-  styleUrls: ['./products-page.component.scss']
+  styleUrls: ['./products-page.component.scss'],
 })
 export class ProductsPageComponent {
-  constructor ( private productsService: ProductsService, public loadingService: LoadingService ) {}
+  constructor(
+    private productsService: ProductsService,
+    public loadingService: LoadingService,
+    public themeService: ThemeService
+  ) {}
 
   public allProducts: Product[] = [];
   public products: Product[] = [];
@@ -21,27 +26,25 @@ export class ProductsPageComponent {
   public category: string = this.productsService.searchTerms.category;
   public price: Price = this.productsService.searchTerms.price;
 
-
   ngOnInit(): void {
     this.getAllProducts();
   }
 
   getAllProducts(): void {
     this.loadingService.showLoading();
-    this.productsService.searchProducts()
-      .subscribe( (products: Product[]) => {
-        this.allProducts = products;
-        this.loadingService.hideLoading();
-        this.loadProducts(this.currentPage);
-        this.productsService.searchTerms = {
-          name: '',
-          category: '',
-          price: {
-            minPrice: '0',
-            maxPrice: '99999999999999'
-          }
-        };
-      });
+    this.productsService.searchProducts().subscribe((products: Product[]) => {
+      this.allProducts = products;
+      this.loadingService.hideLoading();
+      this.loadProducts(this.currentPage);
+      this.productsService.searchTerms = {
+        name: '',
+        category: '',
+        price: {
+          minPrice: '0',
+          maxPrice: '99999999999999',
+        },
+      };
+    });
   }
 
   setName(name: string) {
@@ -52,7 +55,7 @@ export class ProductsPageComponent {
     this.searchProducts();
   }
   setPrice(price: Price) {
-    this.price = price
+    this.price = price;
   }
 
   deleteFilters() {
@@ -61,8 +64,8 @@ export class ProductsPageComponent {
       category: '',
       price: {
         minPrice: '0',
-        maxPrice: '99999999999999'
-      }
+        maxPrice: '99999999999999',
+      },
     };
     this.getAllProducts();
   }
@@ -71,7 +74,7 @@ export class ProductsPageComponent {
     this.productsService.searchTerms = {
       name: this.name,
       category: this.category,
-      price: this.price
+      price: this.price,
     };
     this.getAllProducts();
   }
